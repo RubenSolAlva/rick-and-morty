@@ -1,4 +1,4 @@
-package com.mobilechallenge.di.modules
+package com.rickandmorty.di.modules
 
 import dagger.Module
 

@@ -1,8 +1,8 @@
-package com.mobilechallenge.common
+package com.rickandmorty.common
 
 import android.app.ProgressDialog
 import androidx.fragment.app.Fragment
-import com.mobilechallenge.di.Injectable
+import com.rickandmorty.di.Injectable
 import java.math.BigInteger
 import java.security.SecureRandom
 

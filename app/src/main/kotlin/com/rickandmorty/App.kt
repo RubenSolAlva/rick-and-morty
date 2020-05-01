@@ -1,4 +1,4 @@
-package com.mobilechallenge
+package com.rickandmorty
 
 import android.app.Activity
 import android.app.Application
@@ -10,8 +10,8 @@ import dagger.android.HasActivityInjector
 import dagger.android.HasServiceInjector
 import io.realm.Realm
 import io.realm.RealmConfiguration
-import com.mobilechallenge.di.AppInjector
-import com.mobilechallenge.di.components.AppComponent
+import com.rickandmorty.di.AppInjector
+import com.rickandmorty.di.components.AppComponent
 import javax.inject.Inject
 
 class App : Application(), HasActivityInjector, HasServiceInjector {
@@ -19,12 +19,12 @@ class App : Application(), HasActivityInjector, HasServiceInjector {
     lateinit var activityInjector: DispatchingAndroidInjector<Activity>
     @Inject
     lateinit var serviceInjector: DispatchingAndroidInjector<Service>
-    private var realm: Realm? = null
+    //private var realm: Realm? = null
 
     override fun activityInjector(): DispatchingAndroidInjector<Activity> = activityInjector
     override fun serviceInjector(): AndroidInjector<Service> = serviceInjector
 
-    var appComponent: AppComponent = AppInjector.init(this)
+    private var appComponent: AppComponent = AppInjector.init(this)
         @VisibleForTesting
         set
 
@@ -36,16 +36,16 @@ class App : Application(), HasActivityInjector, HasServiceInjector {
         super.onCreate()
         instance = this
         appComponent.inject(this)
-        realm = initRealm()
+        //realm = initRealm()
     }
 
-    private fun initRealm(): Realm? {
-        Realm.init(this)
-        val realmConfiguration: RealmConfiguration = RealmConfiguration.Builder()
-            .deleteRealmIfMigrationNeeded()
-            .build()
-        Realm.setDefaultConfiguration(realmConfiguration)
-
-        return Realm.getDefaultInstance()
-    }
+    //private fun initRealm(): Realm? {
+    //    Realm.init(this)
+    //    val realmConfiguration: RealmConfiguration = RealmConfiguration.Builder()
+    //        .deleteRealmIfMigrationNeeded()
+    //        .build()
+    //    Realm.setDefaultConfiguration(realmConfiguration)
+//
+    //    return Realm.getDefaultInstance()
+    //}
 }

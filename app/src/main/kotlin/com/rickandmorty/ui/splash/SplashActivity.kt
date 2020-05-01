@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import com.rickandmorty.R
 import com.rickandmorty.common.BaseActivity
-
+import com.rickandmorty.ui.MainActivity
 
 class SplashActivity : BaseActivity() {
     private var mDelayHandler: Handler? = null
@@ -13,7 +13,7 @@ class SplashActivity : BaseActivity() {
 
     private val mRunnable: Runnable = Runnable {
         if (!isFinishing) {
-            startActivity(Intent(applicationContext, OnboardingActivity::class.java))
+            startActivity(Intent(applicationContext, MainActivity::class.java))
             finish()
         }
     }

@@ -1,6 +1,6 @@
 package com.rickandmorty.data.repositories.characters
 
-import com.rickandmorty.data.model.response.CharacterEntity
+import com.rickandmorty.data.models.CharacterEntity
 import com.rickandmorty.data.providers.RemoteCharactersProvider
 import io.reactivex.Single
 import javax.inject.Inject

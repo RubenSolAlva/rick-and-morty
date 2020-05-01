@@ -1,4 +1,4 @@
-package com.mobilechallenge.extensions
+package com.rickandmorty.extensions
 
 import android.content.Context
 import android.content.res.Resources
@@ -11,7 +11,7 @@ import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
-import com.mobilechallenge.common.SingleLiveEvent
+import com.rickandmorty.common.SingleLiveEvent
 
 
 fun View.showSnackbar(snackbarText: String, timeLength: Int) {

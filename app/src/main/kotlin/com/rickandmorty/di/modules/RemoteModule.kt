@@ -1,9 +1,9 @@
-package com.mobilechallenge.di.modules
+package com.rickandmorty.di.modules
 
-import com.mobilechallenge.BuildConfig
+import com.rickandmorty.BuildConfig
 import dagger.Module
 import dagger.Provides
-import com.mobilechallenge.remote.services.RemoteServiceConfig
+import com.rickandmorty.remote.services.RemoteServiceConfig
 import javax.inject.Singleton
 
 @Module
@@ -19,7 +19,6 @@ abstract class RemoteModule {
         @Singleton
         fun provideRemoteServiceConfig(): RemoteServiceConfig = RemoteServiceConfig(
             baseUrl = BuildConfig.BASE_URL,
-            appVersion = "test-version",
             debug = BuildConfig.DEBUG
         )
     }

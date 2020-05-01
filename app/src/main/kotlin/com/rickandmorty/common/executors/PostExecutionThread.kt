@@ -1,4 +1,4 @@
-package com.mobilechallenge.common.executors
+package com.rickandmorty.common.executors
 
 import io.reactivex.Scheduler
 

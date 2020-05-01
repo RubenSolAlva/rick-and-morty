@@ -1,4 +1,4 @@
-package com.mobilechallenge.extensions
+package com.rickandmorty.extensions
 
 import android.util.Patterns
 

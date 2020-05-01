@@ -37,6 +37,7 @@ android {
 
     buildTypes {
         staging {
+            debuggable true
             versionNameSuffix '-sta'
             applicationIdSuffix '.sta'
             buildConfigField "String", "BASE_URL", "\"https://rickandmortyapi.com/\""
@@ -91,11 +92,6 @@ dependencies {
     implementation deps.support.core_utils
     implementation deps.support.constraint_layout
     implementation deps.support.coordinator
-
-    //Google
-    implementation deps.google_services.maps
-    implementation deps.google_services.map_utils
-    implementation deps.google_services.map_services
 
     // Architecture components
     implementation deps.lifecycle.extensions

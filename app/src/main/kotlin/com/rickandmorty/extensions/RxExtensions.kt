@@ -1,12 +1,12 @@
-package com.mobilechallenge.extensions
+package com.rickandmorty.extensions
 
 import androidx.lifecycle.MutableLiveData
 import io.reactivex.Completable
 import io.reactivex.Flowable
 import io.reactivex.Observable
 import io.reactivex.Single
-import com.mobilechallenge.common.ErrorMessageFactory
-import com.mobilechallenge.common.SingleLiveEvent
+import com.rickandmorty.common.ErrorMessageFactory
+import com.rickandmorty.common.SingleLiveEvent
 
 fun<T: Any> Observable<T>.trackError(errorTracker: SingleLiveEvent<Int>) : Observable<T> {
     return this.doOnError{

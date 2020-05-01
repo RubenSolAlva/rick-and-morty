@@ -1,4 +1,4 @@
-package com.mobilechallenge.storage.extensions
+package com.rickandmorty.storage.extensions
 
 import android.os.HandlerThread
 import android.os.Looper

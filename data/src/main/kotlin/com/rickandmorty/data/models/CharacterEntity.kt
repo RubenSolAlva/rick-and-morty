@@ -1,4 +1,4 @@
-package com.rickandmorty.data.model.response
+package com.rickandmorty.data.models
 
 data class CharacterEntity (
     val id      : Int,
@@ -10,7 +10,7 @@ data class CharacterEntity (
     val origin  : LocationEntity,
     val location: LocationEntity,
     val image   : String,
-    val episode : ArrayList<String>,
+    val episode : List<String>,
     val url     : String,
     val created : String
 )

@@ -1,4 +1,4 @@
-package com.mobilechallenge.common
+package com.rickandmorty.common
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

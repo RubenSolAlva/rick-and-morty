@@ -1,4 +1,4 @@
-package com.rickandmorty.data.model.response
+package com.rickandmorty.data.models
 
 data class LocationEntity (
     val name: String,

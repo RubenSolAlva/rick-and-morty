@@ -1,4 +1,4 @@
-package com.mobilechallenge.common
+package com.rickandmorty.common
 
 import androidx.annotation.MainThread
 import androidx.lifecycle.LifecycleOwner

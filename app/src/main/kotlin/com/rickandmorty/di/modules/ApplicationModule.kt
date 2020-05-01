@@ -1,13 +1,13 @@
-package com.mobilechallenge.di.modules
+package com.rickandmorty.di.modules
 
 import android.app.Application
 import android.content.Context
 import dagger.Binds
 import dagger.Module
-import com.mobilechallenge.common.executors.PostExecutionThread
-import com.mobilechallenge.common.executors.UIThread
-import com.mobilechallenge.data.executors.ThreadExecutor
-import com.mobilechallenge.remote.executors.JobExecutor
+import com.rickandmorty.common.executors.PostExecutionThread
+import com.rickandmorty.common.executors.UIThread
+import com.rickandmorty.data.executors.ThreadExecutor
+import com.rickandmorty.remote.executors.JobExecutor
 
 @Module
 abstract class ApplicationModule {

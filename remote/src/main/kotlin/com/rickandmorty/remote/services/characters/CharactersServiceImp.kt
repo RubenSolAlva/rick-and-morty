@@ -1,9 +1,8 @@
-package com.rickandmorty.remote.services.products
+package com.rickandmorty.remote.services.characters
 
-import com.mobilechallenge.remote.entities.responses.NWProductsResponse
-import com.mobilechallenge.remote.extensions.parseSuccessResponseGson
-import com.mobilechallenge.remote.services.RemoteService
-import com.mobilechallenge.remote.services.RemoteServiceConfig
+import com.rickandmorty.remote.models.NWCharactersResponse
+import com.rickandmorty.remote.services.RemoteService
+import com.rickandmorty.remote.services.RemoteServiceConfig
 import io.reactivex.Single
 import kotlinx.serialization.ImplicitReflectionSerializer
 import javax.inject.Inject
@@ -11,10 +10,8 @@ import javax.inject.Inject
 
 @ImplicitReflectionSerializer
 class CharactersServiceImp @Inject constructor(private val serviceConfig: RemoteServiceConfig) :
-    RemoteService<ProductsService>(ProductsService::class.java, serviceConfig) {
-    fun products(): Single<NWProductsResponse> {
-        return service.products()
-            .map { response -> response.parseSuccessResponseGson(NWProductsResponse::class.java) }
-            .doOnSuccess { success -> println("SUCCESS: $success") }
+    RemoteService<CharactersService>(CharactersService::class.java, serviceConfig) {
+    fun characters(page : Int): Single<NWCharactersResponse> {
+        return service.characters(page)
     }
 }

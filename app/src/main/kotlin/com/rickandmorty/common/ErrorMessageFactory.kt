@@ -1,6 +1,6 @@
-package com.mobilechallenge.common
+package com.rickandmorty.common
 
-import com.mobilechallenge.R
+import com.rickandmorty.R
 import timber.log.Timber
 
 class ErrorMessageFactory {

@@ -1,22 +1,16 @@
-package com.mobilechallenge.di.modules
+package com.rickandmorty.di.modules
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import com.mobilechallenge.di.modules.fragments.AuthenticationActivityFragmentsBuildersModule
-import com.mobilechallenge.di.modules.fragments.OnboardingFragmentBuildersModule
-import com.mobilechallenge.scenes.authentication.AuthenticationActivity
-import com.mobilechallenge.scenes.onboarding.splash.OnboardingActivity
-import com.mobilechallenge.scenes.onboarding.splash.SplashActivity
+import com.rickandmorty.di.modules.fragments.MainActivityFragmentsBuildersModule
+import com.rickandmorty.ui.MainActivity
+import com.rickandmorty.ui.splash.SplashActivity
 
 @Module
 abstract class ActivitiesModule {
-    @ContributesAndroidInjector(modules = [(AuthenticationActivityFragmentsBuildersModule::class)])
-    abstract fun contributeAuthenticationActivityInjector(): AuthenticationActivity
+    @ContributesAndroidInjector(modules = [(MainActivityFragmentsBuildersModule::class)])
+    abstract fun contributeMainActivityInjector(): MainActivity
 
     @ContributesAndroidInjector
     abstract fun contributeSplashActivityInjector(): SplashActivity
-
-    @ContributesAndroidInjector(modules = [(OnboardingFragmentBuildersModule::class)])
-    abstract fun contributeOnboardingActivityInjector(): OnboardingActivity
-
 }

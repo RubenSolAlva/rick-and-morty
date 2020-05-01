@@ -1,12 +1,12 @@
-package com.mobilechallenge.di.components
+package com.rickandmorty.di.components
 
 import android.app.Application
 import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
-import com.mobilechallenge.App
-import com.mobilechallenge.di.modules.*
+import com.rickandmorty.App
+import com.rickandmorty.di.modules.*
 import javax.inject.Singleton
 
 @Singleton

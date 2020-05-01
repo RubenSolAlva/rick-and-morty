@@ -1,4 +1,4 @@
-package com.mobilechallenge.di
+package com.rickandmorty.di
 
 interface Injectable {
 }

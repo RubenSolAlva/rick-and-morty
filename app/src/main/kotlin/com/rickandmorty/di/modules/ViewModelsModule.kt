@@ -1,14 +1,13 @@
-package com.mobilechallenge.di.modules
+package com.rickandmorty.di.modules
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
-import com.mobilechallenge.common.ViewModelFactory
-import com.mobilechallenge.di.ViewModelKey
-import com.mobilechallenge.scenes.authentication.SignInSignUpViewModel
-
+import com.rickandmorty.common.ViewModelFactory
+import com.rickandmorty.di.ViewModelKey
+import com.rickandmorty.ui.viewmodels.CharactersViewModel
 
 @Module
 abstract class ViewModelsModule {
@@ -17,7 +16,7 @@ abstract class ViewModelsModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(SignInSignUpViewModel::class)
-    abstract fun bindSignInSignUpViewModel(signInSignUpViewModel: SignInSignUpViewModel): ViewModel
+    @ViewModelKey(CharactersViewModel::class)
+    abstract fun bindCharactersViewModel(charactersViewModel: CharactersViewModel): ViewModel
 
 }

@@ -1,11 +1,11 @@
-package com.mobilechallenge.extensions
+package com.rickandmorty.extensions
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
-import com.mobilechallenge.common.BaseFragment
+import com.rickandmorty.common.BaseFragment
 
 fun FragmentActivity.navigateToActivityRemovingPrevious(classToStartIntent: Class<*>) =
     this.navigateToActivityRemovingPrevious(classToStartIntent, null)

@@ -1,4 +1,4 @@
-package com.mobilechallenge.di
+package com.rickandmorty.di
 
 import android.app.Activity
 import android.app.Application
@@ -10,9 +10,9 @@ import androidx.fragment.app.FragmentManager
 import dagger.android.AndroidInjection
 import dagger.android.support.AndroidSupportInjection
 import dagger.android.support.HasSupportFragmentInjector
-import com.mobilechallenge.App
-import com.mobilechallenge.di.components.AppComponent
-import com.mobilechallenge.di.components.DaggerAppComponent
+import com.rickandmorty.App
+import com.rickandmorty.di.components.AppComponent
+import com.rickandmorty.di.components.DaggerAppComponent
 
 class AppInjector {
     private fun AppInjector() {}

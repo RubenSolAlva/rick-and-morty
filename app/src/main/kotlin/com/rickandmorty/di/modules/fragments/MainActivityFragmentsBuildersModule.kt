@@ -2,11 +2,10 @@ package com.rickandmorty.di.modules.fragments
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import com.rickandmorty.ui.authentication.SignInSignUpFragment
 
 @Module
-abstract class AuthenticationActivityFragmentsBuildersModule {
+abstract class MainActivityFragmentsBuildersModule {
 
     @ContributesAndroidInjector
-    abstract fun contributeAuthSignInSignUpFragmentInjector(): SignInSignUpFragment
+    abstract fun contributeCharactersFragmentInjector(): CharactersFragment
 }

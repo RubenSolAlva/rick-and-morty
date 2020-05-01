@@ -6,7 +6,6 @@ buildscript {
 
     dependencies {
         classpath deps.android_gradle_plugin
-        classpath deps.google_services.plugin
         classpath deps.kotlin.plugin
         classpath deps.kotlin.extensions
         classpath deps.kotlin.serialization
@@ -17,7 +16,7 @@ buildscript {
 allprojects {
     addRepos(repositories)
     ext {
-        androidApplicationId = "com.mobilechallenge"
+        androidApplicationId = "com.rickandmorty"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         testApplicationId = androidApplicationId + '.test'

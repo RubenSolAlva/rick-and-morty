@@ -1,4 +1,4 @@
-package com.mobilechallenge.data;
+package com.rickandmorty.data;
 
 import org.junit.Test;
 
