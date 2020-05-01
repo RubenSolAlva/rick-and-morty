@@ -1,3 +1,36 @@
 <resources>
-    <string name="app_name">RickAndMorty</string>
+    <string name="app_name">Mobile Challenge</string>
+    <string name="some_error">Sorry, there was an error, please try again</string>
+    <string name="exception_message_generic">There was an error</string>
+
+    <!-- Onboarding text resources -->
+    <string name="title_onboarding1">Save your favourite properties</string>
+    <string name="description_onboarding1">We advertise propertyHome for sale through our network of over 1,200 estate
+        agents
+    </string>
+    <string name="title_onboarding2">Get alerts about properties</string>
+    <string name="description_onboarding2">We advertise propertyHome for sale through our network of over 1,200 estate
+        agents
+    </string>
+    <string name="title_onboarding3">Save your favourite properties</string>
+    <string name="description_onboarding3">We advertise propertyHome for sale through our network of over 1,200 estate
+        agents
+    </string>
+
+    <string name="btnSkip">Skip</string>
+    <string name="btnNext">Next</string>
+
+    <!-- Sign In, Sign Up texts , Confirmation texts-->
+    <string name="donothaveaccount_go_signupnow">Don\'t have account? Sign up now</string>
+
+    <string name="btnSignInWithMail">Sign in with Email</string>
+    <string name="continue_without_sign_in">Continue without signing in</string>
+
+    <string name="get_started_title">Get started with MyHome.ie</string>
+    <string name="get_started_description">Save your favourite properties, receive propertyHome alerts and get
+        Neighbourhood Guides information
+    </string>
+
+    <string name="Connect_with_Google">Connect with Google</string>
+
 </resources>

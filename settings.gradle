@@ -1,2 +1,1 @@
-include ':app'
-rootProject.name='RickAndMorty'
+include ':app', ':remote', ':storage', ':data'
