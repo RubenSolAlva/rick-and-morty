@@ -13,6 +13,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import com.rickandmorty.common.SingleLiveEvent
 
+// SnackBar From LiveData
+fun View.getSnackbarInstance(
+    snackbarText: String,
+    timeLength: Int,
+    action: View.OnClickListener? = null
+): Snackbar {
+    return Snackbar.make(this, snackbarText, timeLength)
+        .apply { action.let { setAction(android.R.string.ok, it) } }
+}
 
 fun View.showSnackbar(snackbarText: String, timeLength: Int) {
     Snackbar.make(this, snackbarText, timeLength).show()

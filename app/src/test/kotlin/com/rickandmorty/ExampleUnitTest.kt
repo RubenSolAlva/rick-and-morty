@@ -1,4 +1,4 @@
-package com.mobilechallenge
+package com.rickandmorty
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

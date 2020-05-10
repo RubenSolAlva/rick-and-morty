@@ -4,5 +4,5 @@ import com.rickandmorty.data.models.CharacterEntity
 import io.reactivex.Single
 
 interface RemoteCharactersProvider {
-    fun characters(page : Int): Single<List<CharacterEntity>>
+    suspend fun characters(page : Int): List<CharacterEntity>
 }

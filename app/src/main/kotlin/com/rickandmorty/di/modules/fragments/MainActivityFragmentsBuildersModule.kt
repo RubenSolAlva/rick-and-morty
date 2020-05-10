@@ -1,5 +1,6 @@
 package com.rickandmorty.di.modules.fragments
 
+import com.rickandmorty.ui.fragments.MainFragment
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
 
@@ -7,5 +8,5 @@ import dagger.android.ContributesAndroidInjector
 abstract class MainActivityFragmentsBuildersModule {
 
     @ContributesAndroidInjector
-    abstract fun contributeCharactersFragmentInjector(): CharactersFragment
+    abstract fun contributeMainFragmentInjector(): MainFragment
 }

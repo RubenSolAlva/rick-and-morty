@@ -35,14 +35,31 @@ android {
         unitTests.returnDefaultValues = true
     }
 
+    signingConfigs {
+        staging {
+            storeFile file('../buildsystem/staging.jks')
+            storePassword STAGING_PASSWORD
+            keyAlias STAGING_KEY_ALIAS
+            keyPassword STAGING_KEY_PASSWORD
+        }
+        release {
+            storeFile file('../buildsystem/release.jks')
+            storePassword RELEASE_PASSWORD
+            keyAlias RELEASE_KEY_ALIAS
+            keyPassword RELEASE_KEY_PASSWORD
+        }
+    }
+
     buildTypes {
         staging {
+            signingConfig signingConfigs.staging
             debuggable true
             versionNameSuffix '-sta'
             applicationIdSuffix '.sta'
             buildConfigField "String", "BASE_URL", "\"https://rickandmortyapi.com/\""
         }
         release {
+            signingConfig signingConfigs.release
             minifyEnabled true
             zipAlignEnabled true
             shrinkResources true
@@ -96,6 +113,9 @@ dependencies {
     // Architecture components
     implementation deps.lifecycle.extensions
     implementation deps.lifecycle.reactive
+    implementation deps.lifecycle.viewmodel
+    implementation deps.lifecycle.livedata
+    implementation deps.lifecycle.runtimektx
     implementation deps.support.supportv4
     kapt deps.lifecycle.compiler
 
@@ -103,6 +123,10 @@ dependencies {
     implementation deps.kotlin.stdlib
     implementation deps.kotlin.rx
     kapt deps.kotlin.databinding
+
+    //Kotlin Coroutines
+    implementation deps.kotlin.coroutines
+    implementation deps.kotlin.coroutines_android
 
     // Dagger
     implementation deps.dagger.runtime
@@ -116,6 +140,7 @@ dependencies {
     implementation deps.rx_android
     implementation deps.rxjava2
     implementation deps.rx_binding
+    implementation deps.rx_reactivenetwork
 
     // Third party
     implementation deps.gson

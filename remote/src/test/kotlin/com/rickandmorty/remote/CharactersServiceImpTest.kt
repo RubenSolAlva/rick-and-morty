@@ -1,30 +1,43 @@
 package com.rickandmorty.remote
 
+import com.rickandmorty.remote.providers.RemoteCharactersProviderImp
 import com.rickandmorty.remote.services.RemoteServiceConfig
-import com.rickandmorty.remote.services.characters.CharactersServiceImp
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import kotlinx.coroutines.test.*
 import kotlinx.serialization.ImplicitReflectionSerializer
+import org.junit.After
+import org.junit.Before
 import org.junit.Test
 
-
 @ImplicitReflectionSerializer
+@ExperimentalCoroutinesApi
 class CharactersServiceImpTest {
 
-    private lateinit var charactersService: CharactersServiceImp
+    private lateinit var remoteCharactersProviderImp: RemoteCharactersProviderImp
     private val baseURL = "https://rickandmortyapi.com/"
     private val page = 1
+    private val testDispatcher = TestCoroutineDispatcher()
+    private val testScope = TestCoroutineScope(testDispatcher)
 
-    @Test
-    fun should_do_get_characters_successfully() {
-
+    @Before
+    fun before() {
+        Dispatchers.setMain(testDispatcher)
         val config = RemoteServiceConfig(
             baseUrl = baseURL,
             debug = true
         )
-        charactersService = CharactersServiceImp(config)
+        remoteCharactersProviderImp = RemoteCharactersProviderImp(config)
+    }
 
-        val response = charactersService.characters(page).test()
+    @After
+    fun after() {
+        Dispatchers.resetMain()
+        testScope.cleanupTestCoroutines()
+    }
 
-        response.assertNoErrors()
-        response.assertValue { it.results.size > 0 }
+    @Test
+    fun should_do_get_characters_successfully() = testScope.runBlockingTest {
+            remoteCharactersProviderImp.characters(page)
     }
 }

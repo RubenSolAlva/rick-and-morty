@@ -1,4 +1,4 @@
-package com.ric.storage;
+package com.rickandmorty.storage;
 
 import org.junit.Test;
 

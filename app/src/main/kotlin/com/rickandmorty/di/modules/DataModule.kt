@@ -1,5 +1,8 @@
 package com.rickandmorty.di.modules
 
+import com.rickandmorty.data.repositories.characters.CharactersRepository
+import com.rickandmorty.data.repositories.characters.DataCharactersRepository
+import dagger.Binds
 import dagger.Module
 
 
@@ -18,5 +21,8 @@ abstract class DataModule {
         return InstanceOfSomething
         }*/
     }
+
+    @Binds
+    abstract fun bindCharactersRepository(charactersRepository: DataCharactersRepository): CharactersRepository
 
    }

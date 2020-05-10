@@ -1,4 +1,4 @@
-package com.mobilechallenge
+package com.rickandmorty
 
 import androidx.test.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4

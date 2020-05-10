@@ -18,11 +18,18 @@ dependencies {
     implementation deps.retrofit.kotlinx
     implementation deps.retrofit.rx
     implementation deps.retrofit.loggin_interceptor
+    implementation deps.retrofit.gson
+    implementation deps.retrofit.snapshot
+    implementation deps.retrofit.moshi
 
     // Kotlin
     implementation deps.kotlin.stdlib
     api deps.kotlin.serialization_runtime
     implementation deps.kotlin.rx
+
+    //Kotlin Coroutines
+    implementation deps.kotlin.coroutines
+    implementation deps.kotlin.coroutines_android
 
     // Dagger
     implementation deps.dagger.runtime
@@ -33,8 +40,8 @@ dependencies {
     testImplementation deps.mock_web_server
     testImplementation deps.mockito.core
     testImplementation deps.mockito.inline
+    testImplementation deps.kotlin.coroutines_test
 
-    implementation 'com.google.code.gson:gson:2.8.2'
 
     implementation project(":data")
 }

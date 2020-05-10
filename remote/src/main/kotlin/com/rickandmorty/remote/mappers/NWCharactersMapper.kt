@@ -4,11 +4,7 @@ import com.rickandmorty.data.models.CharacterEntity
 import com.rickandmorty.data.models.LocationEntity
 import com.rickandmorty.remote.models.NWCharacter
 import com.rickandmorty.remote.models.NWLocation
-import io.reactivex.Single
 
-fun Single<NWCharacter>.asDataEntity(): Single<CharacterEntity> {
-    return this.map { it.asDataEntity() }
-}
 fun List<NWCharacter>.asDataEntity(): List<CharacterEntity> =
     map { it.asDataEntity() }
 

@@ -9,7 +9,6 @@ import com.rickandmorty.ui.MainActivity
 
 class SplashActivity : BaseActivity() {
     private var mDelayHandler: Handler? = null
-    private val SPLASH_DELAY: Long = 2000 //2 seconds
 
     private val mRunnable: Runnable = Runnable {
         if (!isFinishing) {
@@ -22,7 +21,7 @@ class SplashActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash)
         mDelayHandler = Handler()
-        mDelayHandler!!.postDelayed(mRunnable, SPLASH_DELAY)
+        mDelayHandler!!.postDelayed(mRunnable, resources.getInteger(R.integer.SPLASH_DELAY).toLong())
     }
 
     public override fun onDestroy() {
@@ -31,5 +30,4 @@ class SplashActivity : BaseActivity() {
         }
         super.onDestroy()
     }
-
 }

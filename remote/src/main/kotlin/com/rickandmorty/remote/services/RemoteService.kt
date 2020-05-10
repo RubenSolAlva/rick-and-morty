@@ -5,7 +5,7 @@ import okhttp3.HttpUrl
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
-import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
+import retrofit2.converter.gson.GsonConverterFactory
 
 data class RemoteServiceConfig(
     val baseUrl: String,
@@ -25,8 +25,8 @@ constructor(c: Class<T>, private val config: RemoteServiceConfig) {
             .addInterceptor(getRequestInterceptor())
 
         return Retrofit.Builder().baseUrl(config.baseUrl)
+            .addConverterFactory(GsonConverterFactory.create())
             .callbackExecutor(JobExecutor())
-            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
             .client(builder.build()).build()
     }
 

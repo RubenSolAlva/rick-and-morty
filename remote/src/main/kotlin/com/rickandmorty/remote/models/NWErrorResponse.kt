@@ -1,12 +1,10 @@
 package com.rickandmorty.remote.models
 
-import kotlinx.serialization.SerialName
+import kotlinx.serialization.Optional
 
 data class NWErrorResponse(
-    @SerialName("ErrorCode")
-    var code: String = "",
-    @SerialName("FieldName")
-    var fieldName: String = "",
-    @SerialName("Message")
-    override var message: String = ""
-): Throwable()
+    @Optional
+    var code: Int = 0,
+    @Optional
+    override var message: String = "Opps! Something wrong"
+) : Throwable()

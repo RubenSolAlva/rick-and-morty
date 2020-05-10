@@ -7,7 +7,7 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 import com.rickandmorty.common.ViewModelFactory
 import com.rickandmorty.di.ViewModelKey
-import com.rickandmorty.ui.viewmodels.CharactersViewModel
+import com.rickandmorty.ui.viewmodels.MainViewModel
 
 @Module
 abstract class ViewModelsModule {
@@ -16,7 +16,7 @@ abstract class ViewModelsModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(CharactersViewModel::class)
-    abstract fun bindCharactersViewModel(charactersViewModel: CharactersViewModel): ViewModel
+    @ViewModelKey(MainViewModel::class)
+    abstract fun bindMainViewModel(mainViewModel: MainViewModel): ViewModel
 
 }
